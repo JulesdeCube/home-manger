@@ -2,7 +2,7 @@
     enable = true;
 
     settings = {
-        wayland_titlebar_color = "background";
+        # wayland_titlebar_color = "background";
         hide_window_decorations = true;
         enable_audio_bell = false;
 
@@ -28,21 +28,21 @@
         foreground = "#b4bbc9";
         background = "#21252b";
 
-        color0 = "#434C5E";
-        color1 = "#FA5A77";
-        color2 = "#2BE491";
-        color3 = "#FA946E";
-        color4 = "#6381EA";
-        color5 = "#CF8EF4";
-        color6 = "#89CCF7";
-        color7 = "#DCDCDC";
-        color8 = "#4C566A";
-        color9 = "#FA748D";
-        color10 = "#44EB9F";
-        color11 = "#FAA687";
-        color12 = "#7A92EA";
-        color13 = "#D8A6F4";
-        color14 = "#A1D5F7";
-        color15 = "#F4F4F4";
+        color0 = "#434C5E"; /* black */
+        color1 = "#FA5A77"; /* red */
+        color2 = "#2BE491"; /* green */
+        color3 = "#FA946E"; /* yellow */
+        color4 = "#6381EA"; /* blue */
+        color5 = "#CF8EF4"; /* purple */
+        color6 = "#89CCF7"; /* cyan */
+        color7 = "#DCDCDC"; /* grey */
+        color8 = "#4C566A"; /* light grey */ 
+        color9 = "#FA748D"; /* light read */
+        color10 = "#44EB9F"; /* light green */
+        color11 = "#FAA687"; /* light yellow */
+        color12 = "#7A92EA"; /* light blue */
+        color13 = "#D8A6F4"; /* light purle */
+        color14 = "#A1D5F7"; /* light cyan */
+        color15 = "#F4F4F4"; /* white */
     };
 }
