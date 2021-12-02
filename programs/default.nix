@@ -1,5 +1,6 @@
 {pkgs, lib, ...}:
 {
+    fish = import ./fish {inherit pkgs; };
     vim = import ./vim { inherit pkgs; };
     git = import ./git;
     bash = import ./bash;

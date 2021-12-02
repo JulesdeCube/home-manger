@@ -1,22 +1,34 @@
 { pkgs, ... }:
 with pkgs; [
-    bat
+  fish
+  starship
 
-    firefox
-    vscode
-    kitty
+  bat
 
-    # juno-theme
-    # vimix-gtk-themes
-    # orchis
-    sweet
-    gnome.gnome-tweaks
+  firefox
+  vscode
+  kitty
 
-    discord
-    slack
+  jetbrains.rider
+  dotnet-sdk_5
+  mono
 
-    starship
-    clang-tools # move to a nix-shell
+  gimp
+  vlc
 
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+  # juno-theme
+  # vimix-gtk-themes
+  # orchis
+  sweet
+  # bibata-cursors-translucent
+  bibata-cursors
+  capitaine-cursors
+  gnome.gnome-tweaks
+
+  discord
+  slack
+  thunderbird
+  teams
+
+  (nerdfonts.override { fonts = [ "FiraCode" ]; })
 ]

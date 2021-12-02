@@ -9,6 +9,9 @@
         lg = "log --abbrev-commit --decorate --format=format:'%C(bold blue)%h %C(bold red)<%an> %C(bold green)(%ar)%C(reset) %C(white)%s%C(bold yellow)%d%C(reset)'";
         cd = "checkout";
         b = "branch";
+        c = "commit";
+        s = "status";
+        a = "add";
     };
     ignores = [ "*~" "*.swp" "*.d" "*.o" ];
     extraConfig = {

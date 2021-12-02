@@ -34,6 +34,28 @@
             error_symbol = "[➜](bold red)";
         };
 
+        battery = {
+          format = "[$symbol]($style) ";
+          disabled = false;
+          full_symbol = "🔋";
+          charging_symbol = "⚡️";
+          discharging_symbol = "";
+          display = [
+            {
+              charging_symbol = "💀⚡️";
+              threshold = 15;
+            }
+            {
+              threshold = 90;
+            }
+            {
+              threshold = 100;
+              discharging_symbol = "🔋";
+              charging_symbol = "🔋⚡️";
+            }
+          ];
+
+        };
 
         format = lib.concatStrings [
             "$username"
@@ -82,6 +104,7 @@
             "$lua"
             "$jobs"
             "$time"
+            "$battery"
             # "$status"
             "$line_break"
             "$status"
