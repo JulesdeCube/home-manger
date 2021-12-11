@@ -1,4 +1,4 @@
-{pkgs, lib, ... }:
+{pkgs, lib, config, ... }:
 {
 
   enable = true;
@@ -23,15 +23,15 @@
       "${modifier}+Shift+r" = "mode resize";
       "${modifier}+Ctrl+Shift+r" = "restart";
 
-      "${modifier}+semicolon" = "focus right";
-      "${modifier}+l" = "focus up";
-      "${modifier}+k" = "focus down";
-      "${modifier}+j" = "focus left";
+      "${modifier}+l" = "focus right";
+      "${modifier}+k" = "focus up";
+      "${modifier}+j" = "focus down";
+      "${modifier}+h" = "focus left";
 
-      "${modifier}+Shift+semicolon" = "move right";
-      "${modifier}+Shift+l" = "move up";
-      "${modifier}+Shift+k" = "move down";
-      "${modifier}+Shift+j" = "move left";
+      "${modifier}+Shift+l" = "move right";
+      "${modifier}+Shift+k" = "move up";
+      "${modifier}+Shift+j" = "move down";
+      "${modifier}+Shift+h" = "move left";
     };
 
     window.border = 1;

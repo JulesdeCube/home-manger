@@ -1,4 +1,4 @@
-{pkgs, lib, ... }:
+{pkgs, lib, config, ... }:
 {
   nixpkgs.config.allowUnfree = true;
 
@@ -10,6 +10,7 @@
   };
 
   home.packages = import ./packages.nix { inherit pkgs; };
+  xsession.windowManager.i3 = import ./i3.nix { inherit pkgs; inherit lib; inherit config; };
 
   fonts.fontconfig.enable = true;
 
