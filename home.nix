@@ -31,11 +31,10 @@
   #
   #   "super + {_,shift +} q" = "bspc node -{c,k}";
   # };
-  services.polybar = import ./polybar {
+  services = import ./services {
     inherit pkgs;
     inherit lib;
   };
-  services.picom = import ./picom.nix { };
 
   fonts.fontconfig.enable = true;
 

@@ -1,5 +1,5 @@
 { lib, ... }:
-let color = import ../colors.nix // { transparent = "#00000000"; };
+let color = import ../../colors.nix // { transparent = "#00000000"; };
 in
 {
   "bar/main" = {

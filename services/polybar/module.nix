@@ -1,4 +1,4 @@
-let color = import ../colors.nix;
+let color = import ../../colors.nix;
 in
 {
   "module/title" = {
