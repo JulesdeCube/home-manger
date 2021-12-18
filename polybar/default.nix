@@ -1,5 +1,4 @@
-{ pkgs, lib, ... }:
-{
+{ pkgs, lib, ... }: {
   enable = true;
   package = pkgs.polybar.override {
     i3Support = true;
@@ -12,7 +11,8 @@
     # githubSupport = true;
   };
 
-  settings = (import ./bar.nix) { inherit lib; } // (import ./color.nix) // (import ./module.nix);
+  # transparent = "#00000000";
+  settings = (import ./bar.nix) { inherit lib; } // (import ./module.nix);
 
   script = "polybar main &";
 }

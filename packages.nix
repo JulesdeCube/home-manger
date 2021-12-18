@@ -13,22 +13,21 @@ with pkgs; [
   dotnet-sdk_5
   mono
 
+  evince
   gimp
   vlc
 
-  # juno-theme
-  # vimix-gtk-themes
-  # orchis
-  sweet
   # bibata-cursors-translucent
   bibata-cursors
   capitaine-cursors
   gnome.gnome-tweaks
+  gnome.gnome-keyring
+  pavucontrol
 
   discord
   slack
   thunderbird
   teams
 
-  (nerdfonts.override { fonts = [ "FiraCode" ]; })
+  (nerdfonts.override { fonts = [ "Iosevka" "FiraCode" ]; })
 ]
