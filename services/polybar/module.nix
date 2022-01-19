@@ -87,11 +87,13 @@ in
     label-mode-foreground = color.color1;
 
     label-focused-foreground = color.color1;
-    label-focused-underline = color.color1;
-    label-visible-foreground = color.color0;
-    label-visible-underline = color.color0;
-
+    label-visible-foreground = color.color7;
+    label-unfocused-foreground = color.color8;
     label-urgent-foreground = color.color9;
+
+    label-visible-underline = color.color7;
+    label-focused-underline = color.color1;
+    label-unfocused-underline = color.background;
 
     label-focused-padding = 1;
     label-unfocused-padding = 1;
@@ -143,12 +145,12 @@ in
     type = "internal/date";
     format-background = color.background;
 
-    time = "%{T3}%{F${color.color1}}%{T-}%{F-} %H:%M";
+    time = "%{T3}%{F${color.color1}}%{T-}%{F-} %H:%M:%S";
     format = " <label>";
     label = "%time%";
     interval = "1.0";
 
-    time-alt = "%{T3}%{F${color.color1}}%{T-}%{F-} %m/%d";
+    time-alt = "%{T3}%{F${color.color1}}%{T-}%{F-} %Y/%m/%d";
 
   };
 
@@ -269,6 +271,7 @@ in
   "module/network" = {
     type = "internal/network";
     interface = "wlp0s20f3";
+
     format-disconnected-background = color.background;
     format-connected-background = color.background;
     format-disconnected-padding = 1;

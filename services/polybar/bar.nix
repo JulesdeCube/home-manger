@@ -12,21 +12,22 @@ in
     background = color.transparent;
     foreground = color.foreground;
     fixed-center = true;
-    bottom = false;
+    bottom = true;
     width = "100%";
     height = 24;
     radius = 0.0;
     offset-y = 0;
     offset-x = 0;
     padding = 0;
-    line-size = 2;
-    border-top-size = 10;
+    line-size = 3;
+    border-top-size = 0;
     border-top-color = color.transparent;
-    border-bottom-size = 0;
+    border-bottom-size = 10;
     border-bottom-color = color.transparent;
 
     #modules-left = "menu-power right space right menu-apps title right";
     modules-left = "menu-power right space left title right";
+    # modules-center = "left bspwm right";
     modules-center = "left i3 right";
     modules-right = "left " + (lib.concatStringsSep " fill " [
       "cpu"
