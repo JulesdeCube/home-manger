@@ -1,21 +1,28 @@
 { ... }: {
   enable = true;
-  experimentalBackends = true;
-  backend = "glx";
+  # experimentalBackends = true;
+  # backend = "glx";
   # enable by default
-  blur = true;
+  # blur = true;
   shadow = true;
-  shadowOffsets = [ (-64) (-64 + 16) ];
+  shadowOffsets = [ (-22) (-22) ];
   shadowOpacity = "0.25";
   extraOptions = ''
-    shadow-radius = 64;
-    blur:
-    {
-        method = "gaussian";
-        size = 64;
-        deviation = 5.0;
-    };
+    shadow-radius = 32;
+    corner-radius = 8.0;
   '';
+
+  # extraOptions = ''
+  #   shadow-radius = 64;
+  #   blur:
+  #   {
+  #       method = "gaussian";
+  #       size = 64;
+  #       deviation = 5.0;
+  #   };
+  #   corner-radius = 9.0;
+  # '';
+
 
   fade = true;
   fadeDelta = 3;
