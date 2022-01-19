@@ -33,29 +33,7 @@ set autowrite
 set foldmethod=syntax
 
 let g:airline_theme='wombat'
-
-highlight EndSpaces ctermbg=173 guibg=#D89B69
-match EndSpaces /\s\+$/
-
-highlight Tabs ctermbg=196 guibg=#CB7558
-match Tabs /\t/
-
-autocmd BufWinEnter * call Hightlight()
-autocmd InsertEnter * call Hightlight()
-autocmd InsertLeave * call Hightlight()
-autocmd BufWinLeave * call clearmatches()
-
-function Hightlight()
-    syntax match EndSpaces /\s\+$/
-    syntax match Tabs /\t/
-endfunction
-
-autocmd FileType make setlocal noexpandtab
-
-highlight LineNr ctermfg=0
-highlight EndOfBuffer ctermfg=0
-highlight EndOfBuffer ctermfg=0
-highlight ColorColumn ctermbg=8
+colorscheme default
 
 function FormatBuffer()
    if executable('clang-format') == 0
@@ -71,17 +49,39 @@ function FormatBuffer()
    endif
  endfunction
 
- autocmd BufWritePre *.h,*.hpp,*.c,*.cpp,*.vert,*.frag :call FormatBuffer()
+function Hightlight()
+    syntax match EndSpaces /\s\+$/
+    syntax match Tabs /\t/
+endfunction
 
-hi Keyword ctermfg=1 
+hi EndSpaces ctermbg=173 guibg=#D89B69
+hi Tabs ctermbg=196 guibg=#CB7558
+match EndSpaces /\s\+$/
+match Tabs /\t/
+
+hi LineNr ctermfg=8
+hi EndOfBuffer ctermfg=0
+hi ColorColumn ctermbg=0
+
+hi Keyword ctermfg=1
 hi Statement ctermfg=1
 hi Constant ctermfg=13
 hi Number ctermfg=13
 hi PreProc ctermfg=1
-hi Function ctermfg=4
+hi Function ctermfg=2
 hi Identifier ctermfg=4
-hi Type ctermfg=2
+hi Type ctermfg=6 cterm=italic
 hi Special ctermfg=5
 hi String ctermfg=3
-hi Comment ctermfg=0
-hi Todo ctermbg=4
+hi Comment ctermfg=8 cterm=italic
+hi Comment ctermfg=7
+hi Todo ctermfg=6 cterm=bold
+
+autocmd BufWritePre *.h,*.hpp,*.c,*.cpp,*.vert,*.frag :call FormatBuffer()
+autocmd BufWinEnter * call Hightlight()
+autocmd InsertEnter * call Hightlight()
+autocmd InsertLeave * call Hightlight()
+autocmd BufWinLeave * call clearmatches()
+
+autocmd FileType make setlocal noexpandtab
+
