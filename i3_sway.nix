@@ -2,8 +2,8 @@
 let
   background = builtins.toString ./background.png;
   gaps = {
-    inner = 16;
-    outer = -4;
+    inner = 8;
+    outer = 2;
   };
 in
 {
@@ -51,7 +51,7 @@ in
         # disable dmenu on mod+d
         "${modifier}+d" = null;
         # lock screen
-        "${modifier}+Ctrl+Shift+l" =
+        "${modifier}+m" =
           "exec i3lock -i ~/.config/nixpkgs/background.png";
         # lock
         "${modifier}+Ctrl+Shift+Return" =
@@ -69,8 +69,14 @@ in
         "${modifier}+Shift+j" = "move down";
         "${modifier}+Shift+h" = "move left";
 
+        "${modifier}+Ctrl+Shift+l" = "move workspace to output right";
+        "${modifier}+Ctrl+Shift+k" = "move workspace to output up";
+        "${modifier}+Ctrl+Shift+j" = "move workspace to output down";
+        "${modifier}+Ctrl+Shift+h" = "move workspace to output left";
+
+
         "${modifier}+n" = "exec ${pkgs.polybar}/bin/polybar-msg cmd toggle";
-        "${modifier}+Shift+n" = "gaps inner current toggle 10";
+        "${modifier}+Shift+n" = "gaps inner current toggle ${toString gaps.inner}";
       };
 
     window.border = 1;
