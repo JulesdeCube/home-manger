@@ -1,7 +1,6 @@
 { lib, ... }:
 let color = import ../../colors.nix // { transparent = "#00000000"; };
-in
-{
+in {
   "bar/main" = {
     monitor = "eDP-1";
     monitor-strict = false;

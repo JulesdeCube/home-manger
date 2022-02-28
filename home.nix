@@ -1,7 +1,6 @@
 { pkgs, lib, config, ... }: {
   nixpkgs.config.allowUnfree = true;
 
-
   home.sessionVariables = {
     EDITOR = "vim";
     TERMINAL = "kitty";

@@ -1,6 +1,5 @@
 let color = import ../../colors.nix;
-in
-{
+in {
   "module/title" = {
     type = "internal/xwindow";
     format-background = color.background;

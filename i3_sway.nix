@@ -5,8 +5,7 @@ let
     inner = 8;
     outer = 2;
   };
-in
-{
+in {
   # wrapperFeatures.gtk = true ;
 
   enable = true;
@@ -44,15 +43,13 @@ in
 
     keybindings =
       let modifier = config.xsession.windowManager.i3.config.modifier;
-      in
-      lib.mkOptionDefault {
+      in lib.mkOptionDefault {
         # close window
         "${modifier}+Shift+q" = "kill";
         # disable dmenu on mod+d
         "${modifier}+d" = null;
         # lock screen
-        "${modifier}+m" =
-          "exec i3lock -i ~/.config/nixpkgs/background.png";
+        "${modifier}+m" = "exec i3lock -i ~/.config/nixpkgs/background.png";
         # lock
         "${modifier}+Ctrl+Shift+Return" =
           "exec ${pkgs.rofi}/bin/rofi -no-lazy-grab -show drun -modi drun -theme /home/jules/.config/rofi/test";
@@ -74,9 +71,9 @@ in
         "${modifier}+Ctrl+Shift+j" = "move workspace to output down";
         "${modifier}+Ctrl+Shift+h" = "move workspace to output left";
 
-
         "${modifier}+n" = "exec ${pkgs.polybar}/bin/polybar-msg cmd toggle";
-        "${modifier}+Shift+n" = "gaps inner current toggle ${toString gaps.inner}";
+        "${modifier}+Shift+n" =
+          "gaps inner current toggle ${toString gaps.inner}";
       };
 
     window.border = 0;

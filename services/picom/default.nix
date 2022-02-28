@@ -24,7 +24,6 @@
   #   corner-radius = 9.0;
   # '';
 
-
   fade = true;
   fadeDelta = 3;
 
