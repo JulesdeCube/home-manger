@@ -11,6 +11,7 @@
     shadow-radius = 32;
     corner-radius = 8.0;
   '';
+  inactiveDim = "0.15";
 
   # extraOptions = ''
   #   shadow-radius = 64;
