@@ -6,7 +6,7 @@
     hide_window_decorations = true;
     enable_audio_bell = false;
 
-    font_size = "11.0";
+    font_size = "9.0";
     font_family = "Fira Code Medium Nerd Font Complete";
     bold_font = "Fira Code Bold Nerd Font Complete";
     italic_font = "Source Code Pro Medium Italic";
