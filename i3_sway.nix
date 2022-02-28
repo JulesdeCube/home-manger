@@ -11,8 +11,8 @@ in
 
   enable = true;
   extraConfig = ''
-    default_border pixel 1
-    default_floating_border pixel 1
+    default_border pixel 0
+    default_floating_border pixel 0
     for_window [class=".*"] border_radius 12'';
   config = {
     modifier = "Mod4";
@@ -79,7 +79,7 @@ in
         "${modifier}+Shift+n" = "gaps inner current toggle ${toString gaps.inner}";
       };
 
-    window.border = 1;
+    window.border = 0;
     window.commands = [
       # { command = "border pixel 1"; }
     ];
