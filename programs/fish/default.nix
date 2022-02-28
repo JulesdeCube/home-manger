@@ -17,6 +17,10 @@
     gps = "git push";
     gpl = "git pull";
     gcd = "git checkout";
+    gl = "git lg";
+    gd = "git diff";
+    gt = "git tag";
+    rm = "rm -d";
   };
   interactiveShellInit = ''
     set EDITOR vim
