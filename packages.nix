@@ -10,12 +10,18 @@ with pkgs; [
   kitty
 
   jetbrains.rider
+  # jetbrains.idea-ultimate
   dotnet-sdk_5
-  mono
+  # mono
+
+  # jdk
+  # maven
 
   evince
   gimp
   vlc
+
+  scrot
 
   # bibata-cursors-translucent
   bibata-cursors
