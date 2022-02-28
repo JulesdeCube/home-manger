@@ -21,4 +21,8 @@
     push.followTags = true;
     init.defaultBranch = "main";
   };
+  signing = {
+    key = "8CFC350F6DC3D50F";
+    signByDefault = true;
+  };
 }
