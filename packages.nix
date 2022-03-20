@@ -17,6 +17,8 @@ with pkgs; [
   # jdk
   # maven
 
+  python310
+
   evince
   gimp
   vlc

@@ -25,5 +25,6 @@
   interactiveShellInit = ''
     set EDITOR vim
     set TERMINAL kitty
+    fish_vi_key_bindings
   '';
 }
