@@ -13,6 +13,7 @@ in {
     default_border pixel 0
     default_floating_border pixel 0
     for_window [class=".*"] border_radius 12'';
+
   config = {
     modifier = "Mod4";
     focus.followMouse = false;
@@ -20,18 +21,17 @@ in {
       # setup: background
       {
         command = "${pkgs.feh}/bin/feh --bg-fill ${background}";
-      }
-      # setup: make caps lock an escape key
-      {
-        command =
-          ''${pkgs.xorg.setxkbmap}/bin/setxkbmap -option "caps:escape"'';
+        always = true;
       }
       # reload poly bar
       {
         command = "systemctl --user restart polybar";
         always = true;
       }
-      { command = "exec i3-msg workspace 1"; }
+      {
+        command = "${pkgs.multilockscreen}/bin/multilockscreen -u .config/nixpkgs/background.png";
+        always = true;
+      }
     ];
 
     # disable i3 bar (use poly bat)
@@ -49,7 +49,8 @@ in {
         # disable dmenu on mod+d
         "${modifier}+d" = null;
         # lock screen
-        "${modifier}+m" = "exec i3lock -i ~/.config/nixpkgs/background.png";
+        "${modifier}+m" =
+      "exec ${pkgs.multilockscreen}/bin/multilockscreen -l";
         # lock
         "${modifier}+Ctrl+Shift+Return" =
           "exec ${pkgs.rofi}/bin/rofi -no-lazy-grab -show drun -modi drun -theme /home/jules/.config/rofi/test";

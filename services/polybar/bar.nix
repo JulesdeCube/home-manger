@@ -1,28 +1,53 @@
 { lib, ... }:
-let color = import ../../colors.nix // { transparent = "#00000000"; };
-in {
-  "bar/main" = {
-    monitor = "eDP-1";
-    monitor-strict = false;
-
+let
+  color = import ../../colors.nix // { transparent = "#00000000"; };
+  font =  import ./font.nix;
+in
+let
+  common = {
     # override-redirect = true
     wm-restack = "i3";
 
     background = color.transparent;
     foreground = color.foreground;
+    border-top-color = color.transparent;
+    border-bottom-color = color.transparent;
+
     fixed-center = true;
-    bottom = true;
+
     width = "100%";
     height = 24;
     radius = 0.0;
+
     offset-y = 0;
     offset-x = 0;
+
     padding = 0;
+    module-margin = 0;
+
     line-size = 3;
-    border-top-size = 0;
-    border-top-color = color.transparent;
-    border-bottom-size = 10;
-    border-bottom-color = color.transparent;
+  } // font;
+in
+let
+  bar = monitor: bottom: {
+    monitor = monitor;
+
+    modules-left = "";
+    modules-center = "left i3 right";
+    modules-right = "";
+
+    bottom = bottom;
+
+    border-bottom-size = if bottom then 10 else 0;
+    border-top-size = if bottom then 0 else 10;
+  } // common;
+in
+{
+  "bar/top" = bar "VGA1" false;
+  "bar/left" = bar "HDMI-0" true;
+  "bar/right" = bar "DP1" true;
+
+  "bar/main" = (bar "DP2" true) // {
 
     #modules-left = "menu-power right space right menu-apps title right";
     modules-left = "menu-power right space left title right";
@@ -39,7 +64,6 @@ in {
     # left backlight right space left battery right space
 
     tray-detached = false;
-    module-margin = 0;
     tray-position = "right";
     tray-maxsize = 15;
     tray-background = color.background;
@@ -49,7 +73,7 @@ in {
     tray-scale = 1.0;
 
     enable-ipc = true;
-  } // (import ./font.nix);
+  };
 
   settings = {
     throttle-output = 5;
