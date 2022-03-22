@@ -9,7 +9,7 @@
     key = "AF0414400CB1566E";
     signByDefault = true;
   };
-  
+
   aliases = {
     tree =
       "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all";
@@ -29,9 +29,5 @@
   extraConfig = {
     push.followTags = true;
     init.defaultBranch = "main";
-  };
-  signing = {
-    key = "8CFC350F6DC3D50F";
-    signByDefault = true;
   };
 }
