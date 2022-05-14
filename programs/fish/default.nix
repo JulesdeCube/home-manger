@@ -2,9 +2,9 @@
   enable = true;
   functions = { fish_greeting = ""; };
   shellAliases = {
-    ls = "ls --color=auto";
-    la = "ls --color=auto -A";
-    ll = "ls --color=auto -Alh";
+    ls = "ls --color=auto --hyperlink=auto";
+    la = "ls --color=auto --hyperlink=auto -A";
+    ll = "ls --color=auto --hyperlink=auto -Alh";
     ".." = "cd ..";
     icat = "kitty +kitten icat";
     ssh = "kitty +kitten ssh";
