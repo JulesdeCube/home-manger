@@ -53,7 +53,7 @@ in {
       "exec ${pkgs.multilockscreen}/bin/multilockscreen -l & sleep 1 && systemctl suspend";
         # lock
         "${modifier}+Ctrl+Shift+Return" =
-          "exec ${pkgs.rofi}/bin/rofi -no-lazy-grab -show drun -modi drun -theme /home/jules/.config/rofi/test";
+          "exec ${pkgs.rofi}/bin/rofi -no-lazy-grab -show drun -modi drun -theme /home/jules/.config/rofi/config.rasi";
         "${modifier}+Shift+r" = "mode resize";
         "${modifier}+Ctrl+Shift+r" = "restart";
 
