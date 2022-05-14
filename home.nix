@@ -7,6 +7,7 @@
   };
 
   home.packages = import ./packages.nix { inherit pkgs; };
+
   gtk.enable = true;
   gtk.theme = {
     package = pkgs.sweet;
@@ -20,8 +21,6 @@
   # };
 
   services = import ./services { inherit pkgs lib; };
-
-  fonts.fontconfig.enable = true;
 
   programs = import ./programs { inherit pkgs lib; };
 
