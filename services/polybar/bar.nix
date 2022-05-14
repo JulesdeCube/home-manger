@@ -43,11 +43,19 @@ let
   } // common;
 in
 {
-  "bar/top" = bar "VGA1" false;
-  "bar/left" = bar "HDMI-0" true;
-  "bar/right" = bar "DP1" true;
+  "bar/DP-1-1" = bar "DP-1-1" true;
+  "bar/DP-1-2" = bar "DP-1-2" true;
+  "bar/DP-1-3" = bar "DP-1-3" true;
 
-  "bar/main" = (bar "DP2" true) // {
+  "bar/DP-2-1" = bar "DP-2-1" true;
+  "bar/DP-2-2" = bar "DP-2-2" true;
+  "bar/DP-2-3" = bar "DP-2-3" true;
+
+  "bar/DP-3-1" = bar "DP-3-1" true;
+  "bar/DP-3-2" = bar "DP-3-2" true;
+  "bar/DP-3-3" = bar "DP-3-3" true;
+
+  "bar/eDP-1" = (bar "eDP-1" true) // {
 
     #modules-left = "menu-power right space right menu-apps title right";
     modules-left = "menu-power right space left title right";

@@ -16,5 +16,9 @@ in
     package = polybar;
     settings = (import ./bar.nix) { inherit lib; } // (import ./module.nix);
 
-  script = "polybar main &";
+    script = ''
+      for display in $(${pkgs.xorg.xrandr}/bin/xrandr --listactivemonitors | ${pkgs.coreutils}/bin/tail -n +2 | ${pkgs.gnugrep}/bin/grep -oE '[^ ]+$'); do
+      ${polybar}/bin/polybar $display &
+      done;
+    '';
 }
