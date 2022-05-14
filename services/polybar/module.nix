@@ -69,7 +69,7 @@ in {
     menu-0-1 = "%{F${color.color2}}%{T4}%{F-}%{T-}";
     menu-0-1-exec = "reboot";
     menu-0-2 = "%{F${color.color3}}%{T4}%{F-}%{T-}";
-    menu-0-2-exec = "lock";
+    menu-0-2-exec = "i3lock --color '#2D2A2E' & sleep 1 && systemctl suspend";
     menu-0-3 = "%{F${color.color0}}%{T4}鈴%{F-}%{T-}";
     menu-0-3-exec = "systemctl suspend";
 
