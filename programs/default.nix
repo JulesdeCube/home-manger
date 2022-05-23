@@ -1,10 +1,10 @@
 { pkgs, lib, ... }: {
-  ssh = import ./ssh {};
-  fish = import ./fish { inherit pkgs; };
-  vim = import ./vim { inherit pkgs; };
-  git = import ./git;
   bash = import ./bash;
+  fish = import ./fish { inherit pkgs; };
+  git = import ./git;
   kitty = import ./kitty;
+  ssh = import ./ssh { };
   starship = import ./starship { inherit lib; };
+  vim = import ./vim { inherit pkgs; };
   vscode = import ./vscode { inherit pkgs; };
 }
