@@ -22,7 +22,7 @@
 
   services = import ./services { inherit pkgs lib; };
 
-  programs = import ./programs { inherit pkgs lib; };
+  programs = import ./programs { inherit pkgs lib config; };
 
   home.file = { } // import ./programs/vim/files.nix;
 }
