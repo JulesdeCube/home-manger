@@ -72,6 +72,8 @@ in {
         "${modifier}+Ctrl+Shift+j" = "move workspace to output down";
         "${modifier}+Ctrl+Shift+h" = "move workspace to output left";
 
+        "${modifier}+g" = "split horizontal";
+
         "${modifier}+n" = "exec ${pkgs.polybar}/bin/polybar-msg cmd toggle";
         "${modifier}+Shift+n" =
           "gaps inner current toggle ${toString gaps.inner}";
