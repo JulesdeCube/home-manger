@@ -51,7 +51,7 @@ in {
         # lock screen
         "${modifier}+Shit+m" =
       "exec ${pkgs.multilockscreen}/bin/multilockscreen -l & sleep 1 && systemctl suspend";
-        # lock
+        "${modifier}+m" = "exec ${pkgs.multilockscreen}/bin/multilockscreen -l";
         # app launcher
         "${modifier}+Ctrl+Shift+Return" = "exec ${pkgs.rofi}/bin/rofi -show drun";
         "${modifier}+Shift+r" = "mode resize";
