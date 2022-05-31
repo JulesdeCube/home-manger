@@ -49,7 +49,7 @@ in {
         # disable dmenu on mod+d
         "${modifier}+d" = null;
         # lock screen
-        "${modifier}+m" =
+        "${modifier}+Shit+m" =
       "exec ${pkgs.multilockscreen}/bin/multilockscreen -l & sleep 1 && systemctl suspend";
         # lock
         "${modifier}+Ctrl+Shift+Return" =
