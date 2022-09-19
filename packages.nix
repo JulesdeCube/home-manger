@@ -19,7 +19,7 @@ with pkgs; [
 
   # python310
 
-  evince
+  # evince
   gimp
   vlc
 
