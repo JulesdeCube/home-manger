@@ -26,5 +26,7 @@
     inactive_border_color = "#1d2126";
     active_border_color = "#0366d6";
 
+    confirm_os_window_close = 0;
+
   } // import ../../colors.nix;
 }
