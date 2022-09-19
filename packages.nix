@@ -17,7 +17,7 @@ with pkgs; [
   # jdk
   # maven
 
-  python310
+  # python310
 
   evince
   gimp
