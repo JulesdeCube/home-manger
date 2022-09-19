@@ -9,9 +9,9 @@ with pkgs; [
   vscode
   kitty
 
-  jetbrains.rider
+  # jetbrains.rider
   # jetbrains.idea-ultimate
-  dotnet-sdk_5
+  # dotnet-sdk_5
   # mono
 
   # jdk
