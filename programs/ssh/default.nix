@@ -2,26 +2,58 @@
   enable = true;
 
   matchBlocks = rec {
-    home_storage-1 = {
-      hostname = "storage-1.home.JulesdeCube.com";
-      proxyJump = "home_gate";
+
+    # Home
+    "home.julesdecube.com" = {
+      user = "jules";
+      port = 2222;
     };
-    home_gate = {
-      hostname = "gate.home.JulesdeCube.com";
+
+    "bastion-*.home.julesdecube.com" = {
+      proxyJump = "home.julesdecube.com";
+      user = "jules";
     };
-    home = home_gate;
-    cri = {
-      hostname = "cri.JulesdeCube.com";
+
+    "storage-*.home.julesdecube.com" = {
+      proxyJump = "home.julesdecube.com";
+      user = "jules";
+    };
+
+    "compute-*.home.julesdecube.com" = {
+      proxyJump = "home.julesdecube.com";
+      user = "root";
+    };
+
+    # exploit
+    "exploit-1.julesdecube.com" = {
+      proxyJump = "bastion-1.home.julesdecube";
+      host = "127.0.0.1";
+      port = 2222;
+    };
+
+    # CRI
+
+    "cri.julesdecube.com" = {
       port = 22238;
     };
+
+    "*.cri.julesdecube.com" = {
+      proxyJump = "cri.julesdecube.com";
+      user = "root";
+    };
+
+    # Redeploy.me
+
     "*.cri.redeploy.me" = {
       proxyJump = "root@gate-bocal.redeploy.me";
       user = "root";
     };
   };
-  extraConfig = ''
-  PubkeyAcceptedAlgorithms +ssh-rsa
-  HostkeyAlgorithms +ssh-rsa
-  KexAlgorithms=+diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
-  '';
+
+
+  # extraConfig = ''
+  # PubkeyAcceptedAlgorithms +ssh-rsa
+  # HostkeyAlgorithms +ssh-rsa
+  # KexAlgorithms=+diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+  # '';
 }
