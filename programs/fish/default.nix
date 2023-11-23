@@ -2,8 +2,15 @@
   enable = true;
   functions = {
     fish_greeting = "";
+    envsource = ''
+      for line in (cat $argv | grep -v '^#')
+          set item (string split -m 1 '=' $line)
+          set -gx $item[1] $item[2]
+          echo "Exported key $item[1]"
+      end
+    '';
     iclip = ''
-      echo $1 
+      echo $1
       xclip -selection clipboard -t (file -b --mime-type $argv[1]) -i $argv[1]
     '';
   };
