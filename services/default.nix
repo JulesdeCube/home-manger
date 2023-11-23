@@ -1,5 +1,5 @@
 { pkgs, lib, ... }: {
     polybar = import ./polybar { inherit pkgs lib; };
     picom = import ./picom { };
-    # sxhkd = import ./sxhkd { };
+    nextcloud-client = import ./nextcloud { };
 }
