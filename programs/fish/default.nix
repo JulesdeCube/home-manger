@@ -39,5 +39,6 @@
     set EDITOR vim
     set TERMINAL kitty
     fish_vi_key_bindings
+    set -U fish_cursor_default line
   '';
 }
