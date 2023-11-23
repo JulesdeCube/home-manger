@@ -123,7 +123,11 @@ in
       only_attached = true;
     };
 
-    hg_branch = git_branch;
+    hg_branch = {
+      format = " on [$symbol$branch(:$remote_branch)]($style)";
+      symbol = "🌱 ";
+      style = content_style "green bold";
+    };
 
     git_commit = {
       format = " on [$hash$tag]($style)";
