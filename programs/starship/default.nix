@@ -82,6 +82,7 @@ in
   enable = true;
   enableBashIntegration = true;
   enableFishIntegration = true;
+  enableNushellIntegration = true;
 
   settings = envsConfig // (rec {
     add_newline = false;
