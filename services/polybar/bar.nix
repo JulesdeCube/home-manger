@@ -1,12 +1,10 @@
 { lib, ... }:
 let
   color = import ../../colors.nix // { transparent = "#00000000"; };
-  font =  import ./font.nix;
+  font = import ./font.nix;
 in
 let
   common = {
-    # override-redirect = true
-    wm-restack = "i3";
 
     background = color.transparent;
     foreground = color.foreground;
