@@ -11,7 +11,6 @@
     ls = "ls --color=auto --hyperlink=auto";
     la = "ls --color=auto --hyperlink=auto -A";
     ll = "ls --color=auto --hyperlink=auto -Alh";
-    ".." = "cd ..";
     icat = "kitty +kitten icat";
     ssh = "kitty +kitten ssh";
     term = "kitty --detach";
