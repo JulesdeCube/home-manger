@@ -31,5 +31,6 @@
   extraConfig = {
     push.followTags = true;
     init.defaultBranch = "main";
+    grep.extendedRegexp  = true;
   };
 }
