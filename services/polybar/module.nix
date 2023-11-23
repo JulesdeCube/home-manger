@@ -16,7 +16,7 @@ in {
     format-padding = 1;
 
     label-open = "%{T3}%{T-}";
-    label-close = "%{F${color.color1}}%{T3}%{F-}%{T-}";
+    label-close = "%{F${color.color1}}%{T3} %{F-}%{T-}";
     label-separator = " ";
 
     # If true, <label-toggle> will be to the left of the menu items (default).
@@ -50,9 +50,9 @@ in {
     format-background = color.background;
     format-padding = 1;
 
-    label-open = "%{T3}%{T-}";
+    label-open = "%{T3}󰍜 %{T-}";
     # label-open = "%{F#FA5A77}%{T3}%{F-}%{T-}";
-    label-close = "%{T4} %{T-}";
+    label-close = "%{T4} %{T-}";
     label-separator = " ";
 
     # If true, <label-toggle> will be to the left of the menu items (default).
@@ -64,13 +64,13 @@ in {
     #
     # Commands will be executed using "/bin/sh -c \$COMMAND"
 
-    menu-0-0 = "%{F${color.color1}}%{T4}%{F-}%{T-}";
+    menu-0-0 = "%{F${color.color1}}%{T4} %{F-}%{T-}";
     menu-0-0-exec = "poweroff";
-    menu-0-1 = "%{F${color.color2}}%{T4}%{F-}%{T-}";
+    menu-0-1 = "%{F${color.color2}}%{T4} %{F-}%{T-}";
     menu-0-1-exec = "reboot";
-    menu-0-2 = "%{F${color.color3}}%{T4}%{F-}%{T-}";
+    menu-0-2 = "%{F${color.color3}}%{T4} %{F-}%{T-}";
     menu-0-2-exec = "i3lock --color '#2D2A2E' & sleep 1 && systemctl suspend";
-    menu-0-3 = "%{F${color.color0}}%{T4}鈴%{F-}%{T-}";
+    menu-0-3 = "%{F${color.color0}}%{T4}鈴 %{F-}%{T-}";
     menu-0-3-exec = "systemctl suspend";
 
   };
@@ -104,11 +104,12 @@ in {
     label-visible = "%{T4}%icon%%{T-}";
     label-urgent = "%{T4}%icon%%{T-}";
 
-    ws-icon-0 = "1;";
-    ws-icon-1 = "2;";
-    ws-icon-2 = "3;爵";
-    ws-icon-3 = "4;";
-    # ws-icon-4 = "5;ﭮ";
+    ws-icon = [
+      "1;"
+      "2;"
+      "3;󰖟"
+      "4;󰍡"
+    ];
     ws-icon-default = "";
 
   };
@@ -144,12 +145,12 @@ in {
     type = "internal/date";
     format-background = color.background;
 
-    time = "%{T3}%{F${color.color1}}%{T-}%{F-} %H:%M:%S";
+    time = "%{T3}%{F${color.color1}} %{T-}%{F-} %H:%M:%S";
     format = " <label>";
     label = "%time%";
     interval = "1.0";
 
-    time-alt = "%{T3}%{F${color.color1}}%{T-}%{F-} %Y/%m/%d";
+    time-alt = "%{T3}%{F${color.color1}} %{T-}%{F-} %Y/%m/%d";
 
   };
 
@@ -180,42 +181,56 @@ in {
     format-full-background = color.background;
 
     ramp-capacity = [
-      "%{F${color.color1}}"
-      "%{F${color.color1}}"
-      "%{F${color.color1}}"
-      "%{F${color.color3}}"
-      "%{F${color.color3}}"
-      "%{F${color.color3}}"
-      "%{F${color.color3}}"
-      "%{F${color.color3}}"
-      "%{F${color.color2}}"
-      "%{F${color.color2}}"
-      "%{F${color.color2}}"
+      "%{F${color.color1}}󰂃"
+      "%{F${color.color1}}󰁺"
+      "%{F${color.color1}}󰁻"
+      "%{F${color.color3}}󰁼"
+      "%{F${color.color3}}󰁽"
+      "%{F${color.color3}}󰁾"
+      "%{F${color.color3}}󰁿"
+      "%{F${color.color2}}󰂀"
+      "%{F${color.color2}}󰂁"
+      "%{F${color.color2}}󰂂"
+      "%{F${color.color2}}󰁹"
     ];
 
-    animation-charging-0 = "";
-    animation-charging-1 = "";
-    animation-charging-2 = "";
-    animation-charging-3 = "";
-    animation-charging-4 = "";
+    animation-charging = [
+      "󰢜"
+      "󰂆"
+      "󰂇"
+      "󰂈"
+      "󰢝"
+      "󰂉"
+      "󰢞"
+      "󰂊"
+      "󰂋"
+      "󰂅"
+    ];
+
+    animation-low = [
+      " "
+      "  "
+    ];
   };
 
   "module/pulseaudio" = {
     type = "internal/pulseaudio";
 
     format-volume =
-      "%{T3}%{F${color.color4}}<ramp-volume>%{F-}%{T-} <label-volume>";
-    format-muted-prefix = "%{T3}%{F${color.color1}}ﱝ%{F-}%{T-}";
+      "%{T3}%{F${color.color4}}<ramp-volume> %{F-}%{T-} <label-volume>";
+    format-muted-prefix = "%{T3}%{F${color.color1}}󰝟 %{F-}%{T-}";
     label-muted = " Mute";
     format-volume-foreground = color.foreground;
     format-muted-foreground = color.foreground;
     format-volume-background = color.background;
     format-muted-background = color.background;
 
-    ramp-volume-0 = "";
-    ramp-volume-1 = "";
-    ramp-volume-2 = "墳";
-
+    ramp-volume = [
+      "󰕿"
+      "󰖀"
+      "󰕾"
+      ""
+    ];
   };
 
   "module/backlight" = {
@@ -235,13 +250,13 @@ in {
     type = "internal/cpu";
     format-background = color.background;
 
-    format = "%{T4}%{F${color.color3}}%{T-}%{F-} <label>";
+    format = "%{T4}%{F${color.color3}} %{T-}%{F-} <label>";
   };
 
   "module/memory" = {
     type = "internal/memory";
     interval = 3;
-    format = "%{T4}%{F${color.color5}}%{T-}%{F-} <label>";
+    format = "%{T4}%{F${color.color5}} %{T-}%{F-} <label>";
     format-background = color.background;
 
     label = "%percentage_used%%";
@@ -279,6 +294,6 @@ in {
     label-disconnected = "no eth";
     label-disconnected-foreground = color.color1;
 
-    format-connected = "%{T3}%{F${color.color6}}%{T-}%{F-} <label-connected>";
+    format-connected = "%{T3}%{F${color.color6}} %{T-}%{F-} <label-connected>";
   };
 }
