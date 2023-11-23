@@ -45,7 +45,14 @@ let
     kotlin = { color = "blue"; symbol = "🇰ₑ"; };
     lua = { color = "blue"; symbol = "🌙"; };
     nim = { color = "yellow"; symbol = "👑"; };
-    nodejs = { color = "green"; symbol = ""; };
+    nodejs = {
+      color = "green";
+      symbol = "";
+      override = {
+        format = " [$symbol($version)](${content_style "white bold"} $style)";
+        not_capable_style = content_style "red bold";
+      };
+    };
     ocaml = { color = "yellow"; symbol = "🐫"; };
     perl = { color = "149"; symbol = "🐪"; };
     php = { color = "147"; symbol = "🐘"; };
