@@ -23,7 +23,7 @@ with pkgs; [
   gimp
   vlc
 
-  scrot
+  flameshot
 
   # bibata-cursors-translucent
   bibata-cursors

@@ -54,6 +54,8 @@ in {
         "${modifier}+m" = "exec ${pkgs.multilockscreen}/bin/multilockscreen -l";
         # app launcher
         "${modifier}+Ctrl+Shift+Return" = "exec ${pkgs.rofi}/bin/rofi -show drun";
+        # screenshot
+        "${modifier}+Shift+s" = "exec ${pkgs.flameshot}/bin/flameshot gui";
         "${modifier}+Shift+r" = "mode resize";
         "${modifier}+Ctrl+Shift+r" = "restart";
 
