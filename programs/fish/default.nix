@@ -23,7 +23,6 @@
     icat = "kitty +kitten icat";
     ssh = "kitty +kitten ssh";
     term = "kitty --detach";
-    remote_gdb = ''gdb -q -ex "target remote localhost:1234" -ex tab'';
     g = "git";
     ga = "git add";
     gc = "git commit";
