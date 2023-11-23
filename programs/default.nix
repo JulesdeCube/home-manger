@@ -7,6 +7,7 @@
   rofi = import ./rofi { inherit pkgs config lib; };
   ssh = import ./ssh { };
   starship = import ./starship { inherit lib; };
+  neovim = import ./neovim;
   vim = import ./vim { inherit pkgs; };
   vscode = import ./vscode { inherit pkgs; };
 }
