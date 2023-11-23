@@ -26,6 +26,8 @@
 
   ignores = [ "*~" "*.swp" "*.d" "*.o" ];
 
+  lfs.enable = true;
+
   extraConfig = {
     push.followTags = true;
     init.defaultBranch = "main";
