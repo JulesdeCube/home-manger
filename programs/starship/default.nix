@@ -5,17 +5,17 @@ let
   bg_color = "black";
   apply_bg = apply_style bg_color;
 
-  left_symbol =  "";
-  right_symbol =  "";
+  left_symbol = "";
+  right_symbol = "";
   character_symbol = "➜";
   left = apply_bg left_symbol;
   right = apply_bg right_symbol;
 
-  content_style =  color: "bg:${bg_color} fg:${color}";
+  content_style = color: "bg:${bg_color} fg:${color}";
   apply_content = color: apply_style (content_style color);
   apply_group = color: value: left + (apply_content color value) + right;
 
-  mkEnv =  name: {color, symbol, override ? {}}: {
+  mkEnv = name: { color, symbol, override ? { } }: {
     format = " [$symbol($version)]($style)";
     style = content_style "${color} bold";
     version_format = "$raw";
@@ -23,61 +23,62 @@ let
   } // override;
 
   envs = {
-      buf = { color = "blue"; symbol = "🦬"; };
-      # bun = {color = "red"; symbol = "🍞"; };
-      c = { color = "149"; symbol = "C"; };
-      cmake  = { color = "blue"; symbol = "△"; };
-      cobol = {color = "blue"; symbol = "⚙️"; };
-      conda = { color = "green"; symbol = "🇨"; };
-      crystal = { color = "red"; symbol = "🔮"; };
-      # daml = { color = "cyan"; symbol = "Λ";  };
-      dart = { color = "blue"; symbol = "🎯"; };
-      deno = { color = "green"; symbol = "🦕"; };
-      dotnet = { color = "blue"; symbol = ".NET"; };
-      elixir = { color = "purple"; symbol = "💧"; };
-      elm = { color = "cyan"; symbol = "🌳"; };
-      erlang = { color = "red"; symbol = "ҽ"; };
-      golang = { color = "cyan"; symbol = "🐹"; };
-      haskell = { color = "purple"; symbol = "λ"; };
-      helm = { color = "white"; symbol = "⎈"; };
-      java = { color = "red"; symbol = "☕"; };
-      julia = { color = "purple"; symbol = "ஃ"; };
-      kotlin = { color = "blue"; symbol = "🇰ₑ"; };
-      lua = { color = "blue"; symbol = "🌙"; };
-      nim = { color = "yellow"; symbol = "👑"; };
-      nodejs = { color = "green"; symbol = ""; };
-      ocaml = { color = "yellow"; symbol = "🐫"; };
-      perl = { color = "149"; symbol = "🐪"; };
-      php = { color = "147"; symbol = "🐘"; };
-      pulumi = { color = "5"; symbol = ""; }; 
-      purescript = { color = "white"; symbol = "⇄"; };
-      python = {
-        color = "green";
-        symbol = "🐍";
-        override.format = " [$symbol$pyenv_prefix($version )(\\($virtualenv\\))]($style)";
-      };
-      rlang = { color = "blue"; symbol = "📐"; };
-      # raku = { color = "149"; symbol = "🦋"; };
-      red = { color = "red"; symbol = "🔺"; };
-      ruby = { color = "red"; symbol = "💎"; };
-      rust = { color = "red"; symbol = "🦀"; };
-      scala = { color = "202"; symbol = "🇸"; };
-      swift = { color = "202"; symbol = "🐦"; };
-      terraform = { color = "105"; symbol = "💠"; };
-      vagrant = { color = "cyan"; symbol = "⍱"; };
-      vlang = { color = "blue"; symbol = "V"; };
-      zig = { color = "yellow"; symbol = "↯"; };
+    buf = { color = "blue"; symbol = "🦬"; };
+    # bun = {color = "red"; symbol = "🍞"; };
+    c = { color = "149"; symbol = "C"; };
+    cmake = { color = "blue"; symbol = "△"; };
+    cobol = { color = "blue"; symbol = "⚙️"; };
+    conda = { color = "green"; symbol = "🇨"; };
+    crystal = { color = "red"; symbol = "🔮"; };
+    # daml = { color = "cyan"; symbol = "Λ";  };
+    dart = { color = "blue"; symbol = "🎯"; };
+    deno = { color = "green"; symbol = "🦕"; };
+    dotnet = { color = "blue"; symbol = ".NET"; };
+    elixir = { color = "purple"; symbol = "💧"; };
+    elm = { color = "cyan"; symbol = "🌳"; };
+    erlang = { color = "red"; symbol = "ҽ"; };
+    golang = { color = "cyan"; symbol = "🐹"; };
+    haskell = { color = "purple"; symbol = "λ"; };
+    helm = { color = "white"; symbol = "⎈"; };
+    java = { color = "red"; symbol = "☕"; };
+    julia = { color = "purple"; symbol = "ஃ"; };
+    kotlin = { color = "blue"; symbol = "🇰ₑ"; };
+    lua = { color = "blue"; symbol = "🌙"; };
+    nim = { color = "yellow"; symbol = "👑"; };
+    nodejs = { color = "green"; symbol = ""; };
+    ocaml = { color = "yellow"; symbol = "🐫"; };
+    perl = { color = "149"; symbol = "🐪"; };
+    php = { color = "147"; symbol = "🐘"; };
+    pulumi = { color = "5"; symbol = ""; };
+    purescript = { color = "white"; symbol = "⇄"; };
+    python = {
+      color = "green";
+      symbol = "🐍";
+      override.format = " [$symbol$pyenv_prefix($version )(\\($virtualenv\\))]($style)";
+    };
+    rlang = { color = "blue"; symbol = "📐"; };
+    # raku = { color = "149"; symbol = "🦋"; };
+    red = { color = "red"; symbol = "🔺"; };
+    ruby = { color = "red"; symbol = "💎"; };
+    rust = { color = "red"; symbol = "🦀"; };
+    scala = { color = "202"; symbol = "🇸"; };
+    swift = { color = "202"; symbol = "🐦"; };
+    terraform = { color = "105"; symbol = "💠"; };
+    vagrant = { color = "cyan"; symbol = "⍱"; };
+    vlang = { color = "blue"; symbol = "V"; };
+    zig = { color = "yellow"; symbol = "↯"; };
 
-      package  = {
-        color = "208";
-        symbol = "📦"; 
-        override.format = "[$symbol$version]($style) ";
-      };
+    package = {
+      color = "208";
+      symbol = "📦";
+      override.format = "[$symbol$version]($style) ";
+    };
   };
 
   envsConfig = builtins.mapAttrs mkEnv envs;
 
-in {
+in
+{
   enable = true;
   enableBashIntegration = true;
   enableFishIntegration = true;
@@ -90,7 +91,7 @@ in {
       style_root = content_style "red bold";
       # show_always = true;
     };
-    
+
     sudo = {
       style = content_style "blue bold";
       disabled = true;
@@ -106,10 +107,10 @@ in {
     };
 
     directory = {
-      format ="[$path]($style)[$read_only]($read_only_style)";
+      format = "[$path]($style)[$read_only]($read_only_style)";
       # home_symbol = "🏠";
       read_only_style = content_style "red bold";
-      style =  content_style "cyan bold";
+      style = content_style "cyan bold";
       # repo_root_style =  content_style "bright-cyan dim bold";
       truncation_length = 0;
     };
@@ -131,7 +132,7 @@ in {
     };
 
     git_state = rec {
-      format = apply_group  "bright-white" "$state $progress_current/$progress_total";
+      format = apply_group "bright-white" "$state $progress_current/$progress_total";
       # style = "bg:${bg} fg:yellow bold ";
       rebase = apply_content "green bold" "♻️ rebase";
       merge = apply_content "green bold" "⚜️ merge";
@@ -230,14 +231,14 @@ in {
     };
 
     cmd_duration = {
-      format = " " + apply_group  "yellow bold" "⌛$duration";
+      format = " " + apply_group "yellow bold" "⌛$duration";
       # style = content_style ;
       show_notifications = true;
     };
 
     status = {
       disabled = false;
-      format =  " " + apply_group "red bold" "$symbol$common_meaning$signal_name$maybe_int";
+      format = " " + apply_group "red bold" "$symbol$common_meaning$signal_name$maybe_int";
       map_symbol = true;
       # style = content_style "red bold";
       symbol = "🔴";
@@ -245,7 +246,7 @@ in {
 
     nix_shell = {
       symbol = "⛄";
-      format =  " " + apply_group "blue bold" "$symbol$name$state";
+      format = " " + apply_group "blue bold" "$symbol$name$state";
       # style = content_style "blue bold";
       impure_msg = "";
       pure_msg = " (pure)";
@@ -253,13 +254,13 @@ in {
 
     docker_context = {
       symbol = "🐳";
-      format =  " " + apply_group "blue bold" "$symbol$context";
+      format = " " + apply_group "blue bold" "$symbol$context";
       # style = content_style "blue bold";
     };
 
     gcloud = {
       symbol = "☁️";
-      format =  " " + apply_group "blue bold" "$symbol$account(@$domain)(\\($region\\))";
+      format = " " + apply_group "blue bold" "$symbol$account(@$domain)(\\($region\\))";
     };
 
     # TODO
@@ -268,22 +269,22 @@ in {
     # };
 
     singularity = {
-      format =  " " + apply_group "blue dimmed bold" "$symbol\\[$env\\]";
+      format = " " + apply_group "blue dimmed bold" "$symbol\\[$env\\]";
     };
 
     spack = {
       symbol = "💠";
-      format =  " " + apply_group "blue bold" "$symbol$environment";
+      format = " " + apply_group "blue bold" "$symbol$environment";
     };
 
     openstack = {
       symbol = "☁️";
-      format =  " " + apply_group "yellow bold" "$symbol$cloud(\\($project\\))";
+      format = " " + apply_group "yellow bold" "$symbol$cloud(\\($project\\))";
     };
 
 
     format = lib.concatStrings [
-       "$fill "
+      "$fill "
 
       "$status"
       "$cmd_duration"
@@ -333,5 +334,5 @@ in {
       "$shell"
       "$character"
     ];
-  }); 
+  });
 }
