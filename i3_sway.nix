@@ -49,7 +49,7 @@ in {
         # disable dmenu on mod+d
         "${modifier}+d" = null;
         # lock screen
-        "${modifier}+Shit+m" =
+        "${modifier}+comma" =
       "exec ${pkgs.multilockscreen}/bin/multilockscreen -l & sleep 1 && systemctl suspend";
         "${modifier}+m" = "exec ${pkgs.multilockscreen}/bin/multilockscreen -l";
         # app launcher
