@@ -159,16 +159,14 @@ in {
     battery = "BAT0";
     adapter = "AC";
     full-at = 100;
+    low-at = 15;
     format-background = color.background;
 
-    # format-charging = "%{T1}%{F#6381EA}<animation-charging>⚡ %{F-}%{T-}<label-charging>";
-    # format-discharging = "%{T1}%{F#6381EA}<ramp-capacity>%{T3} %{F-}%{T-}<label-discharging>";
     format-discharging = "%{T5}<ramp-capacity>%{F-}%{T-} <label-discharging>";
-    # format-discharging = " <label-discharging>";
-    format-charging =
-      "%{T5}<ramp-capacity>%{T6} %{T2}%{F-}%{T-} <label-charging>";
-    # format-discharging = " <label-discharging>";
-    format-full = "%{T5}%{F${color.color2}}%{T6} %{F-}%{T-}<label-full>";
+    format-charging = "%{T5}%{F${color.color3}}<animation-charging>%{F-}%{T-} <label-charging>";
+    format-full = "%{T5}%{F${color.color2}}<ramp-capacity>%{F-}%{T-} <label-full>";
+    format-low = "%{T5}%{F${color.color1}}<animation-low><ramp-capacity>%{F-}%{T-} <label-full>";
+
     label-charging = "%percentage%%";
     label-discharging = "%percentage%%";
 
