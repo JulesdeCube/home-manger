@@ -39,5 +39,5 @@ with pkgs; [
   slack
   thunderbird
 
-  (nerdfonts.override { fonts = [ "Iosevka" "FiraCode" ]; })
+  (nerdfonts.override { fonts = [ "Iosevka" "FiraCode" "SourceCodePro" ]; })
 ]
