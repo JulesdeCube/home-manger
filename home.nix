@@ -25,4 +25,6 @@
   programs = import ./programs { inherit pkgs lib config; };
 
   home.file = { } // import ./programs/vim/files.nix;
+
+  home.stateVersion = "22.11";
 }
