@@ -21,6 +21,11 @@ with pkgs; [
 
   # python310
 
+  # postman
+  dig
+  tcpdump
+  nmap
+
   # evince
   gimp
   vlc
