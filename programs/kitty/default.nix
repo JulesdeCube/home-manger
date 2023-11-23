@@ -11,6 +11,7 @@
     bold_font = "FiraCode Nerd Font Bold";
     italic_font = "SauceCodePro NF SemiBold";
     bold_italic_font = "SauceCodePro NF Black Italic";
+    disable_ligatures = "never";
 
     cursor = "#cccccc";
     cursor_shape = "beam";
