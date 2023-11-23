@@ -42,7 +42,6 @@ with pkgs; [
   discord
   slack
   thunderbird
-  teams
 
   (nerdfonts.override { fonts = [ "Iosevka" "FiraCode" ]; })
 ]
