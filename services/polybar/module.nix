@@ -6,7 +6,7 @@ in {
     format-padding = 1;
 
     label-empty = "Desktop";
-    label-maxlen = 42;
+    label-maxlen = 64;
   };
 
   "module/menu-apps" = {
