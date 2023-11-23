@@ -63,7 +63,11 @@ let
     rust = { color = "red"; symbol = "🦀"; };
     scala = { color = "202"; symbol = "🇸"; };
     swift = { color = "202"; symbol = "🐦"; };
-    terraform = { color = "105"; symbol = "💠"; };
+    terraform = {
+      color = "105";
+      symbol = "💠";
+      override.format = "[$symbol$version $workspace]($style) ";
+    };
     vagrant = { color = "cyan"; symbol = "⍱"; };
     vlang = { color = "blue"; symbol = "V"; };
     zig = { color = "yellow"; symbol = "↯"; };
