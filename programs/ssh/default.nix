@@ -1,59 +1,101 @@
-{}: {
+{}: rec {
   enable = true;
 
-  matchBlocks = rec {
-
-    # Home
-    "home.julesdecube.com" = {
-      user = "jules";
+  matchBlocks = {
+    # julesdecube.com
+    "*home.julesdecube.com *oci.julesdecube.com" = {
       port = 2222;
     };
 
-    "bastion-*.home.julesdecube.com" = {
+    "*.home.julesdecube.com" = {
       proxyJump = "home.julesdecube.com";
-      user = "jules";
     };
 
-    "storage-*.home.julesdecube.com" = {
-      proxyJump = "home.julesdecube.com";
-      user = "jules";
-    };
+    # tcom.epita.fr
 
-    "compute-*.home.julesdecube.com" = {
-      proxyJump = "home.julesdecube.com";
+    "*.tcom.openstack.epita.fr" = {
+      proxyJump = "tcom.epita.fr";
       user = "root";
     };
 
-    # exploit
-    "exploit-1.julesdecube.com" = {
-      proxyJump = "bastion-1.home.julesdecube";
-      host = "127.0.0.1";
+    "tcom.epita.fr" = {
+      user = "root";
+    };
+
+
+    # srs.epita.fr
+
+    "*.srs.epita.fr srs.epita.fr" = {
+      user = "root";
+    };
+
+    "198.18.*" = {
+      user = "root";
+      proxyJump = "172.19.112.107";
+    };
+
+    "172.19.112.107" = {
+      user = "root";
+    };
+
+    # cri.epita.fr
+    "bastion.cri-playground.iaas.epita.fr" = {
+      user = "root";
+    };
+
+    "*.cri_playground.openstack.epita.fr" = {
+      proxyJump = "bastion.cri-playground.iaas.epita.fr";
+      user = "root";
+    };
+
+    "bastion.iaas.cri.epita.fr" = {
+      user = "root";
       port = 2222;
     };
-
-    # CRI
-
-    "cri.julesdecube.com" = {
-      port = 22238;
+    "srvc-maas-worker-standalone.cri-playground.openstack.epita.fr" = {
+      user = "root";
+      hostname = "192.168.99.243";
+      proxyJump = "root@bastion.cri-playground.iaas.epita.fr";
     };
 
-    "*.cri.julesdecube.com" = {
-      proxyJump = "cri.julesdecube.com";
+    "*.cri.openstack.epita.fr" = {
       user = "root";
+      proxyJump = "bastion.iaas.cri.epita.fr";
     };
 
-    # Redeploy.me
-
-    "*.cri.redeploy.me" = {
-      proxyJump = "root@gate-bocal.redeploy.me";
+    "*.cri.epita.fr !gitlab.iaas.cri.epita.fr !bastion.iaas.cri.epita.fr" = {
       user = "root";
+      port = 22;
+    };
+
+    "*.cri.epita.fr !gitlab.cri.epita.fr !gate.cri.epita.fr !bastion.iaas.cri.epita.fr" = {
+      proxyJump = "root@gate.cri.epita.fr";
+    };
+
+    # KB in the order: Cisco, Midlab, Lab SR, SM 14, SM 15
+    "10.202.7.* 10.224.33.* 10.224.34.* 10.224.35.* 10.224.36.*" = {
+      user = "root";
+      port = 22;
+      proxyJump = "root@gate.cri.epita.fr";
+      extraOptions.StrictHostKeyChecking = "no";
+    };
+
+    # VJ in the order 302, 303, 304, 305, 306, 311
+    "10.224.52.* 10.224.53.* 10.224.54.* 10.224.55.* 10.224.56.* 10.224.57.*" = {
+      user = "root";
+      port = 22;
+      proxyJump = "root@gate.cri.epita.fr";
+      extraOptions.StrictHostKeyChecking = "no";
+    };
+
+    # SBG, TLS, RNS, LYN
+    "10.57.117.* 10.57.30.* 10.57.19.* 10.57.12.*" = {
+      user = "root";
+      port = 22;
+      proxyJump = "root@gate.cri.epita.fr";
+      extraOptions.StrictHostKeyChecking = "no";
     };
   };
 
 
-  # extraConfig = ''
-  # PubkeyAcceptedAlgorithms +ssh-rsa
-  # HostkeyAlgorithms +ssh-rsa
-  # KexAlgorithms=+diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
-  # '';
 }
