@@ -32,10 +32,6 @@ with pkgs; [
 
   flameshot
 
-  # bibata-cursors-translucent
-  bibata-cursors
-  capitaine-cursors
-  gnome.gnome-tweaks
   gnome.gnome-keyring
   pavucontrol
 
