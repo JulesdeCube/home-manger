@@ -10,6 +10,7 @@ with pkgs; [
   kitty
   obsidian
 
+  keeweb
 
   # jetbrains.rider
   # jetbrains.idea-ultimate
