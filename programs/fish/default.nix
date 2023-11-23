@@ -15,6 +15,8 @@
     '';
   };
   shellAliases = {
+    ns = "nix-shell --run fish -p";
+    nd = "nix develop -c fish";
     ls = "ls --color=auto --hyperlink=auto";
     la = "ls --color=auto --hyperlink=auto -A";
     ll = "ls --color=auto --hyperlink=auto -Alh";
