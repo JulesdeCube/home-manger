@@ -310,7 +310,7 @@ in
       "$nix_shell"
       "$docker_context"
       "$container"
-      "$gcloud"
+      # "$gcloud"
       "$kubernetes"
       "$openstack"
 
