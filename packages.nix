@@ -8,6 +8,8 @@ with pkgs; [
   firefox
   vscode
   kitty
+  obsidian
+
 
   # jetbrains.rider
   # jetbrains.idea-ultimate
