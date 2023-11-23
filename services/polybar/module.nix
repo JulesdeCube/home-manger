@@ -99,10 +99,10 @@ in {
     label-visible-padding = 1;
     label-urgent-padding = 1;
 
-    label-focused = "%{T4}%icon%%{T-}";
-    label-unfocused = "%{T4}%icon%%{T-}";
-    label-visible = "%{T4}%icon%%{T-}";
-    label-urgent = "%{T4}%icon%%{T-}";
+    label-focused = "%{T4}%icon%";
+    label-unfocused = "%{T4}%icon%";
+    label-visible = "%{T4}%icon%";
+    label-urgent = "%{T4}%icon%";
 
     ws-icon = [
       "1;"
