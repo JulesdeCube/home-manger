@@ -29,6 +29,7 @@ with pkgs; [
 
 
   flameshot
+  xclip
 
   gnome.gnome-keyring
   pavucontrol
