@@ -7,10 +7,10 @@
     enable_audio_bell = false;
 
     font_size = "9.0";
-    font_family = "Fira Code Medium Nerd Font Complete";
-    bold_font = "Fira Code Bold Nerd Font Complete";
-    italic_font = "Source Code Pro Medium Italic";
-    bold_italic_font = "Source Code Pro Black Italic";
+    font_family = "FiraCode Nerd Font Med";
+    bold_font = "FiraCode Nerd Font Bold";
+    italic_font = "SauceCodePro NF SemiBold";
+    bold_italic_font = "SauceCodePro NF Black Italic";
 
     cursor = "#cccccc";
     cursor_shape = "beam";
