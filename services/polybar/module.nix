@@ -239,11 +239,24 @@ in {
     card = "intel_backlight";
     enable-scroll = "true";
     use-actual-brightness = true;
-    format = "%{T3}%{F${color.color7}}%{F-}%{T-} <label>";
+    format = "%{T3}%{F${color.color7}}<ramp> %{F-}%{T-}<label>";
     label = "%percentage%%";
     format-foreground = color.color11;
     format-background = color.background;
 
+    ramp = [
+      "󰌶"
+      "󱩎"
+      "󱩏"
+      "󱩐"
+      "󱩑"
+      "󱩒"
+      "󱩓"
+      "󱩔"
+      "󱩕"
+      "󱩖"
+      "󰛨"
+    ];
   };
 
   "module/cpu" = {
