@@ -24,7 +24,7 @@
   #   corner-radius = 9.0;
   # '';
 
-  fade = true;
+  fade = false;
   fadeDelta = 3;
 
   # Blur background of opaque windows with transparent frames as well.
