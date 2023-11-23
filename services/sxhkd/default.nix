@@ -1,4 +1,4 @@
-{ }: {
+{}: {
   enable = true;
   keybindings = {
     "super + Return" = "kitty";

@@ -5,7 +5,8 @@ let
     inner = 8;
     outer = 2;
   };
-in {
+in
+{
   # wrapperFeatures.gtk = true ;
 
   enable = true;
@@ -50,7 +51,7 @@ in {
         "${modifier}+d" = null;
         # lock screen
         "${modifier}+comma" =
-      "exec ${pkgs.multilockscreen}/bin/multilockscreen -l & sleep 1 && systemctl suspend";
+          "exec ${pkgs.multilockscreen}/bin/multilockscreen -l & sleep 1 && systemctl suspend";
         "${modifier}+m" = "exec ${pkgs.multilockscreen}/bin/multilockscreen -l";
         # app launcher
         "${modifier}+Ctrl+Shift+Return" = "exec ${pkgs.rofi}/bin/rofi -show drun";
