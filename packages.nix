@@ -26,9 +26,6 @@ with pkgs; [
   tcpdump
   nmap
 
-  # evince
-  gimp
-  vlc
 
   flameshot
 
