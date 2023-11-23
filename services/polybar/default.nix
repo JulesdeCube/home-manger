@@ -2,7 +2,7 @@
 let
   polybar = pkgs.polybar.override {
     i3Support = true;
-    i3GapsSupport = true;
+    # i3GapsSupport = true;
     pulseSupport = true;
     # alsaSupport = true;
     # pulseaudioSupport = true;
