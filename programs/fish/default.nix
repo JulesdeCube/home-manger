@@ -27,6 +27,7 @@
     gd = "git diff";
     gt = "git tag";
     rm = "rm -d";
+    k = "kubecolor";
   };
   interactiveShellInit = ''
     set EDITOR vim
