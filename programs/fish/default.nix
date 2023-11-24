@@ -11,7 +11,7 @@
     '';
     iclip = ''
       echo $1
-      xclip -selection clipboard -t (file -b --mime-type $argv[1]) -i $argv[1]
+      ${pkgs.xclip}/bin/xclip -selection clipboard -t (${pkgs.file}/bin/file -b --mime-type $argv[1]) -i $argv[1]
     '';
   };
   shellAliases = {
