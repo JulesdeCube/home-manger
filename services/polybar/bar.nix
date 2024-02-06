@@ -53,6 +53,10 @@ in
   "bar/DP-3-2" = bar "DP-3-2" true;
   "bar/DP-3-3" = bar "DP-3-3" true;
 
+  "bar/DP-1" = bar "DP-1" true;
+  "bar/DP-2" = bar "DP-2" true;
+  "bar/DP-3" = bar "DP-3" true;
+
   "bar/eDP-1" = (bar "eDP-1" true) // {
 
     #modules-left = "menu-power right space right menu-apps title right";

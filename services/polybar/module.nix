@@ -114,6 +114,15 @@ in {
 
   };
 
+  "module/tray" = {
+    type = "internal/tray";
+
+    tray-size = 15;
+    tray-background = color.background;
+    tray-padding = 0;
+    tray-spacing = 1.5;
+  };
+
   "module/left" = {
     type = "custom/text";
 
