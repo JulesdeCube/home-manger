@@ -29,6 +29,10 @@
       user = "root";
     };
 
+    "*.fic.dc-01.srs.epita.fr !gw-01.fic.dc-01.srs.epita.fr" = {
+      proxyJump = "gw-01.fic.dc-01.srs.epita.fr";
+    };
+
     "198.18.*" = {
       user = "root";
       proxyJump = "172.19.112.107";
