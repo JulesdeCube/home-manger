@@ -66,24 +66,13 @@ in
       "backlight"
       "pulseaudio"
       "battery"
-    ]) + " right space left date right space left";
+    ]) + " right space left date right space left tray";
     # left backlight right space left battery right space
-
-    tray-detached = false;
-    tray-position = "right";
-    tray-maxsize = 15;
-    tray-background = color.background;
-    tray-offset-x = 0;
-    tray-offset-y = 0;
-    tray-padding = 0;
-    tray-scale = 1.0;
 
     enable-ipc = true;
   };
 
   settings = {
-    throttle-output = 5;
-    throttle-output-for = 10;
     screenchange-reload = true;
     pseudo-transparency = false;
   };
