@@ -126,28 +126,28 @@ in {
   "module/left" = {
     type = "custom/text";
 
-    content = "%{T2}%{T-}";
-    content-foreground = color.background;
+    format = "%{T2}%{T-}";
+    format-foreground = color.background;
 
   };
 
   "module/right" = {
     type = "custom/text";
 
-    content = "%{T2}%{T-}";
-    content-foreground = color.background;
+    format = "%{T2}%{T-}";
+    format-foreground = color.background;
 
   };
 
   "module/fill" = {
     type = "custom/text";
-    content = "  ";
-    content-background = color.background;
+    format = "  ";
+    format-background = color.background;
   };
 
   "module/space" = {
     type = "custom/text";
-    content = " ";
+    format = " ";
   };
 
   "module/date" = {
@@ -174,18 +174,21 @@ in {
     format-discharging = "%{T5}<ramp-capacity>%{F-}%{T-} <label-discharging>";
     format-charging = "%{T5}%{F${color.color3}}<animation-charging>%{F-}%{T-} <label-charging>";
     format-full = "%{T5}%{F${color.color2}}<ramp-capacity>%{F-}%{T-} <label-full>";
-    format-low = "%{T5}%{F${color.color1}}<animation-low><ramp-capacity>%{F-}%{T-} <label-full>";
+    format-low = "%{T5}%{F${color.color1}}<animation-low><ramp-capacity>%{F-}%{T-} <label-low>";
 
     label-charging = "%percentage%%";
     label-discharging = "%percentage%%";
+    label-low = "%percentage%%";
 
     format-charging-foreground = color.foreground;
     format-discharging-foreground = color.foreground;
     format-full-foreground = color.foreground;
+    format-low-foreground = color.foreground;
 
     format-charging-background = color.background;
     format-discharging-background = color.background;
     format-full-background = color.background;
+    format-low-background = color.background;
 
     ramp-capacity = [
       "%{F${color.color1}}󰂃"
