@@ -41,23 +41,23 @@ let
   } // common;
 in
 {
-  "bar/DP-1-1" = bar "DP-1-1" true;
-  "bar/DP-1-2" = bar "DP-1-2" true;
-  "bar/DP-1-3" = bar "DP-1-3" true;
+  "bar/DP1-1" = bar "DP1-1" true;
+  "bar/DP1-2" = bar "DP1-2" true;
+  "bar/DP1-3" = bar "DP1-3" true;
 
-  "bar/DP-2-1" = bar "DP-2-1" true;
-  "bar/DP-2-2" = bar "DP-2-2" true;
-  "bar/DP-2-3" = bar "DP-2-3" true;
+  "bar/DP2-1" = bar "DP2-1" true;
+  "bar/DP2-2" = bar "DP2-2" true;
+  "bar/DP2-3" = bar "DP2-3" true;
 
-  "bar/DP-3-1" = bar "DP-3-1" true;
-  "bar/DP-3-2" = bar "DP-3-2" true;
-  "bar/DP-3-3" = bar "DP-3-3" true;
+  "bar/DP3-1" = bar "DP3-1" true;
+  "bar/DP3-2" = bar "DP3-2" true;
+  "bar/DP3-3" = bar "DP3-3" true;
 
-  "bar/DP-1" = bar "DP-1" true;
-  "bar/DP-2" = bar "DP-2" true;
-  "bar/DP-3" = bar "DP-3" true;
+  "bar/DP1" = bar "DP1" true;
+  "bar/DP2" = bar "DP2" true;
+  "bar/DP3" = bar "DP3" true;
 
-  "bar/eDP-1" = (bar "eDP-1" true) // {
+  "bar/eDP1" = (bar "eDP1" true) // {
 
     #modules-left = "menu-power right space right menu-apps title right";
     modules-left = "menu-power right space left title right";
