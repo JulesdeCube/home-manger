@@ -3,10 +3,10 @@
   delta.enable = true;
 
   userName = "Jules Lefebvre";
-  userEmail = "jules@cri.epita.fr";
+  userEmail = "jules@julesdecube.com";
 
   signing = {
-    key = "AF0414400CB1566E";
+    key = "BB2746EDB5E6BCE0";
     signByDefault = true;
   };
 
