@@ -33,7 +33,6 @@ with pkgs; [
 
   # communication
   discord
-  slack
   thunderbird
 
   (nerdfonts.override { fonts = [ "Iosevka" "FiraCode" "SourceCodePro" ]; })
